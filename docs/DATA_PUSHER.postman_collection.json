@@ -1,0 +1,698 @@
+{
+	"info": {
+		"_postman_id": "e5b4bbaf-17da-42fc-b754-f34d314d1594",
+		"name": "DATA_PUSHER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38054691"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"yadhu1@gmail.com\",\r\n  \"password\":\"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"yadhu1@gmail.com\",\r\n  \"password\":\"123456\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RefreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDE0OCwiZXhwIjoxNzUwNTg0OTQ4fQ.4UVdQZvhbzvpxkIdCHmwtOEjH1-LOfBfEK8E9ykTeso\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "createAccount",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accountName\":\" yadhu's account 1\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/account/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"account",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all accounts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/account?name= y&fromDate=2023-01-01&toDate=2026-06-15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"account"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": " y"
+								},
+								{
+									"key": "fromDate",
+									"value": "2023-01-01"
+								},
+								{
+									"key": "toDate",
+									"value": "2026-06-15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountName\":\"updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/account/b3ff1681-adf0-4f48-857d-bc9cab96b062",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"account",
+								"b3ff1681-adf0-4f48-857d-bc9cab96b062"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get account by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/account/b3ff1681-adf0-4f48-857d-bc9cab96b062",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"account",
+								"b3ff1681-adf0-4f48-857d-bc9cab96b062"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/account/b3ff1681-adf0-4f48-857d-bc9cab96b062",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"account",
+								"b3ff1681-adf0-4f48-857d-bc9cab96b062"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "accountMember",
+			"item": [
+				{
+					"name": "add user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n {\r\n  \"accountId\": \"361d0bab-f712-4dbf-ac14-1d6196843f92\",\r\n  \"userId\": \"87789ab6-8fbf-4c98-86fe-7230ec5c277c\",\r\n  \"role\": \"Normal user\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/account-members/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"account-members",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get members of account",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newRoleName\":\"Admin\"  \r\n    // or give \"Normal user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/account-members/account/361d0bab-f712-4dbf-ac14-1d6196843f92/user/87789ab6-8fbf-4c98-86fe-7230ec5c277/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"account-members",
+								"account",
+								"361d0bab-f712-4dbf-ac14-1d6196843f92",
+								"user",
+								"87789ab6-8fbf-4c98-86fe-7230ec5c277",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newRoleName\":\"Admin\"  \r\n    // or give \"Normal user\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/account-members/account/361d0bab-f712-4dbf-ac14-1d6196843f92/user/87789ab6-8fbf-4c98-86fe-7230ec5c277",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"account-members",
+								"account",
+								"361d0bab-f712-4dbf-ac14-1d6196843f92",
+								"user",
+								"87789ab6-8fbf-4c98-86fe-7230ec5c277"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "destination",
+			"item": [
+				{
+					"name": "create destination",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n  \"url\": \"https://webhook.site/33318112-d963-4b78-a006-df648ef9d8c3\",\r\n  \"httpMethod\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"secretkey\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*/*\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/destination/65b94648-b0ca-47cf-b5fb-799d8347b9c2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"destination",
+								"65b94648-b0ca-47cf-b5fb-799d8347b9c2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get destination by accountId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n  \"accountId\": \"acc_123456\",  \r\n  \"url\": \"https://webhook.site/33318112-d963-4b78-a006-df648ef9d8c3\",\r\n  \"httpMethod\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"secretkey\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*/*\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/destination/ff8b9812-f4b5-4b3a-a448-91618013ec24?method=post&search=http",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"destination",
+								"ff8b9812-f4b5-4b3a-a448-91618013ec24"
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "post"
+								},
+								{
+									"key": "search",
+									"value": "http"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update destination",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \r\n  \"url\": \"https://webhook.site/33318112-d963-4b78-a006-df648ef9d8c3\",\r\n  \"httpMethod\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"secretkey\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*/*\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/destination/40a405cd-c828-4dc4-ba15-29b54cceb9b1/account/ff8b9812-f4b5-4b3a-a448-91618013ec24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"destination",
+								"40a405cd-c828-4dc4-ba15-29b54cceb9b1",
+								"account",
+								"ff8b9812-f4b5-4b3a-a448-91618013ec24"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete destination",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n  \"accountId\": \"acc_123456\",  \r\n  \"url\": \"https://webhook.site/33318112-d963-4b78-a006-df648ef9d8c3\",\r\n  \"httpMethod\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"secretkey\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*/*\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/destination/40a405cd-c828-4dc4-ba15-29b54cceb9b1/account/ff8b9812-f4b5-4b3a-a448-91618013ec24",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"destination",
+								"40a405cd-c828-4dc4-ba15-29b54cceb9b1",
+								"account",
+								"ff8b9812-f4b5-4b3a-a448-91618013ec24"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "logs",
+			"item": [
+				{
+					"name": "get logs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg3Nzg5YWI2LThmYmYtNGM5OC04NmZlLTcyMzBlYzVjMjc3YyIsImlhdCI6MTc0OTk4MDI4MywiZXhwIjoxNzUwMDcwMjgzfQ.z2Lr5SA_-xJeGk8Ys-TwvQfdCi-5uI5klU__hF-xqJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n  \"accountId\": \"acc_123456\",  \r\n  \"url\": \"https://webhook.site/33318112-d963-4b78-a006-df648ef9d8c3\",\r\n  \"httpMethod\": \"POST\",\r\n  \"headers\": {\r\n    \"APP_ID\": \"1234APPID1234\",\r\n    \"APP_SECRET\": \"secretkey\",\r\n    \"ACTION\": \"user.update\",\r\n    \"Content-Type\": \"application/json\",\r\n    \"Accept\": \"*/*\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/logs/65b94648-b0ca-47cf-b5fb-799d8347b9c2?destinationId=some-dest-id&status=success&fromDate=2025-06-01&toDate=2025-06-15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logs",
+								"65b94648-b0ca-47cf-b5fb-799d8347b9c2"
+							],
+							"query": [
+								{
+									"key": "destinationId",
+									"value": "some-dest-id"
+								},
+								{
+									"key": "status",
+									"value": "success"
+								},
+								{
+									"key": "fromDate",
+									"value": "2025-06-01"
+								},
+								{
+									"key": "toDate",
+									"value": "2025-06-15"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "incoming data",
+			"item": [
+				{
+					"name": "incoming data",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
