@@ -26,6 +26,30 @@ docs/
 .env
 ```
 
+---
+
+## 🏗️ Repository Architecture
+
+| Folder/Module           | Purpose                                                                |
+|-------------------------|------------------------------------------------------------------------|
+| `config/`               | Configuration files (DB, Redis, constants, etc.)                       |
+| `controllers/`          | Handle HTTP requests and orchestrate service logic                     |
+| `interfaces/`           | TypeScript interfaces and types for type safety                        |
+| `middlewares/`          | Express middlewares (auth, error handling, rate limiting, etc.)        |
+| `models/`               | Sequelize or ORM model definitions                                     |
+| `modules/data-handler/` | Core module for receiving, validating, and dispatching data            |
+| `queue/`                | Job queues and Bull queue configurations                               |
+| `repositories/`         | Database logic, separated from business logic                          |
+| `routes/`               | API endpoint definitions and route registration                        |
+| `seeders/`              | Seed data for initializing development or test environments            |
+| `services/`             | Business logic and reusable core operations                            |
+| `utils/`                | Utility/helper functions                                               |
+| `validators/`           | Request body validation using express-validator                        |
+| `app.ts`                | Main entry point where Express is configured                           |
+
+---
+
+
 ## ✨ Features
 
 - **All API routes are authenticated using JWT**
