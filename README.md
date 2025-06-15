@@ -33,7 +33,7 @@ docs/
 - Account and Destination management
 - Role-based access (Admin / Normal User)
 - Queue-based async processing via Bull.js + Redis
-- Advanced logging & filtering
+- Advanced  filtering
 - SQLite database
 - Rate-limiting and input validation
 - Postman collection for API testing
@@ -46,7 +46,6 @@ docs/
 - Redis + Bull.js
 - SQLite
 - JWT
-- Jest / Supertest for testing
 
 ## 🚀 Getting Started
 
@@ -61,7 +60,7 @@ npm install
 Create your environment variables file:
 
 ```bash
-cp .env.example .env
+cp .env
 ```
 
 ### 3. Run in Development
@@ -103,22 +102,19 @@ To explore the API:
 ## 🧪 Environment File (`.env.example`)
 
 ```env
+#redis
+REDIS_PASSWORD=Your_Redis_Remote_Password
+REDIS_HOST=Your_Redis_Remote_Host
+REDIS_PORT=Your_Redis_Remote_Port
+#JWT
+JWT_SECRET=JWT_Access_Secret
+JWT_REFRESH_SECRET=JWT_Refresh_Secret
+
 PORT=3000
-NODE_ENV=development
-
-JWT_SECRET=your_jwt_secret
-JWT_EXPIRY=1d
-
-DATABASE_URL=./dev.sqlite
-REDIS_HOST=localhost
-REDIS_PORT=6379
-
-RATE_LIMIT_WINDOW_MS=1000
-RATE_LIMIT_MAX=5
 ```
 
 ---
 
 ## ✍️ Author
 
-Developed for Clabshr MERN Developer Assessment.
+Developed for Clabshr Node.js Developer Assessment.
